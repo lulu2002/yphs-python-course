@@ -13,6 +13,13 @@ def special_case_not_leap(year):
 
 
 if __name__ == '__main__':
-    year = int(input("請輸入年份"))
+    while True:
+        try:
+            year = int(input("請輸入年份"))
+        except ValueError:
+            continue
 
-    print(year, "是閏年: ", is_leap_year(year))
+        if year == 0:
+            break
+
+        print(year, "是閏年: ", is_leap_year(year))
